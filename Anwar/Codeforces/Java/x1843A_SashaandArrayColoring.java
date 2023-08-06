@@ -1,4 +1,4 @@
-
+// https://codeforces.com/problemset/problem/1843/A
 import java.util.*;
 
 public class x1843A_SashaandArrayColoring {
