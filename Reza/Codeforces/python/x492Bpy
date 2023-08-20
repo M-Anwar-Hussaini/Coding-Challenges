@@ -1,0 +1,22 @@
+fl = list(map(int, input().split(" ")))
+n = fl[0]
+l = fl[1]
+
+lntrns = list(map(int, input().split(" ")))
+
+lntrns.sort()
+if len(lntrns) > 1:
+    maxD = (lntrns[1] - lntrns[0])/2
+    for i in range(len(lntrns)-1):
+        dif = (lntrns[i+1] - lntrns[i])/2
+        if dif > maxD:
+            maxD = dif
+else:
+    maxD = lntrns[0] - 0
+st = lntrns[0] - 0
+if st > maxD:
+    maxD = st
+en = l - lntrns[-1]
+if en > maxD:
+    maxD = en
+print(maxD)
