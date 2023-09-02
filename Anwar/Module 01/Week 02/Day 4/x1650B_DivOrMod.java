@@ -7,6 +7,8 @@ public class x1650B_DivOrMod {
         Scanner input = new Scanner(System.in);
         int test = input.nextInt();
         while (test-- > 0) {
+
+            
             int l = input.nextInt();
             int r = input.nextInt();
             int a = input.nextInt();
