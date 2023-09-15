@@ -1,50 +1,18 @@
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Scanner;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Ali Baba
- */
 public class Main {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String str = input.next();
-        LinkedList<Character> list = new LinkedList<>();
-        for (char c : str.toCharArray()) {
-            list.add(c);
-        }
-        HashSet<String> set = new HashSet<>();
-        set.add("88");
-        set.add("69");
-        set.add("96");
-        set.add("00");
+        String input = "Ali";
+        int n = input.length();
+        int totalSubsets = 1 << n;
 
-        boolean flag = true;
-        while (list.size() > 1) {
-            String temp = "" + list.pollFirst() + "" + list.pollLast();
-            if (!set.contains(temp)) {
-                flag = false;
-                break;
-            }
+        for (int mask = 0; mask < totalSubsets; mask++) {
+            System.out.println("Subset: "+(mask+1));
+            for (int i = 0; i < n; i++) {
+                if ((mask & (1 << i)) != 0) {
+                    System.out.print(input.charAt(i));
+                }
+            }System.out.println("");
         }
-
-        if (list.size() == 1) {
-            char num = list.poll();
-            System.out.println(num);
-            if (num != '8' && num !='0') {
-                flag = false;
-            }
-        }
-
-        System.out.println(flag);
     }
-
 }
